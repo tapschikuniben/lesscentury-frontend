@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "lesscentury-frontend"
+    }
+  },
+  "defaultProject": "lesscentury-frontend",
+  "cli": {
+    "analytics": "4765d69e-c88b-436a-a3a7-00b40d24356e"
+  }
 }
