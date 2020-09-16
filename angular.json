@@ -25,10 +25,11 @@
             ],
             "styles": [
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "styles.scss"
+              "src/styles.css"
             ],
             "scripts": [
-              "node_modules/jquery/dist/jquery.min.js"
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
             ]
           },
           "configurations": {
@@ -91,12 +92,9 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
-              "styles.scss"
+              "src/styles.css"
             ],
-            "scripts": [
-              "node_modules/jquery/dist/jquery.min.js"
-            ]
+            "scripts": []
           }
         },
         "lint": {
@@ -129,6 +127,6 @@
   },
   "defaultProject": "lesscentury-frontend",
   "cli": {
-    "analytics": "4765d69e-c88b-436a-a3a7-00b40d24356e"
+    "analytics": "0a14bd30-91e9-4598-a624-3fbe2649e7ef"
   }
 }
