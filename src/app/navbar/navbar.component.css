@@ -1,0 +1,46 @@
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.nav-links {
+  display: flex;
+  flex-direction: row;
+  font-size: 1rem;
+  align-items: flex-start;
+  height: 100%;
+}
+
+.nav-links > div {
+  display: flex;
+  flex-grow: 1;
+  align-items: flex-start;
+}
+
+.link {
+  /* border: 1px solid white; */
+  height: 100%;
+  padding: 3% 10px 0 10px;
+  display: flex;
+  align-items: flex-start;
+  cursor: pointer;
+}
+
+.link mat-icon {
+  margin-top: 3%;
+  margin-right: 2px;
+}
+
+.link-right {
+  /* border: 1px solid white; */
+  height: 100%;
+  padding: 12% 10px 0 10px;
+  cursor: pointer;
+}
+
+.logo {
+  /* border: 1px solid white; */
+  margin-right: 15px;
+  height: 100%;
+  padding: 1% 10px 0 10px;
+  cursor: pointer;
+}

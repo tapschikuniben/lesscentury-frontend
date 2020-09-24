@@ -1,0 +1,53 @@
+<mat-toolbar color="primary">
+    <!-- <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+        <mat-icon>menu</mat-icon>
+    </button> -->
+    <div class="logo">
+        Lesscentury
+    </div>
+    <ul class="nav">
+        <li class="nav-item">
+            <a mat-button class="nav-link" [routerLinkActive]="['active']" data-toggle="tab"
+                [routerLink]="['/dashboard']">
+                <i class="material-icons">reorder</i> Dashboard
+            </a>
+        </li>
+        <li class="nav-item">
+            <a mat-button class="nav-link" [routerLinkActive]="['active']" data-toggle="tab" [routerLink]="['/sales']">
+                <i class="material-icons">payments</i> Sales
+            </a>
+        </li>
+        <li class="nav-item">
+            <a mat-button class="nav-link" [routerLinkActive]="['active']" data-toggle="tab"
+                [routerLink]="['/catalog']">
+                <i class="material-icons">view_day</i> Catalog
+            </a>
+        </li>
+        <li class="nav-item">
+            <a mat-button class="nav-link" [routerLinkActive]="['active']" data-toggle="tab"
+                [routerLink]="['/customers']">
+                <i class="material-icons">people</i> Customers
+            </a>
+        </li>
+        <li class="nav-item">
+            <a mat-button class="nav-link" [routerLinkActive]="['active']" data-toggle="tab"
+                [routerLink]="['/services']">
+                <i class="material-icons">amp_stories</i> Services
+            </a>
+        </li>
+    </ul>
+
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+        <mat-icon>settings</mat-icon>
+    </button>
+    <div class="nav-links">
+        <div class="link-right">
+            Admin
+        </div>
+        <div class="link-right" (click)="logout()">
+            Logout
+        </div>
+    </div>
+
+</mat-toolbar>

@@ -30,3 +30,46 @@ label {
   -webkit-border-radius: 50%;
   border-radius: 50%;
 }
+
+/*angular material card*/
+.example-card {
+  max-width: 400px;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+}
+
+.login-inputs {
+  margin-top: 10%;
+}
+
+.sign_in_sign_up {
+  border-top: solid 1px #D6DBDF;
+  display: flex;
+  align-items: flex-end;
+  padding-top: 8px;
+  margin-bottom: 5px;
+}
+
+.sign_in_sign_up_header {
+   border-bottom: solid 1px #D6DBDF;
+   padding: 8px;
+   margin-bottom: 8px;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}

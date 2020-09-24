@@ -1,0 +1,131 @@
+<div class="card card-plain">
+    <div class="card-header card-header-success">
+        <h4 class="card-title">New Product</h4>
+    </div><br />
+    <mat-label>Basic Information</mat-label>
+    <form class="needs-validation" #f="ngForm">
+        <div class="row bg-light">
+            <div class="col-md-6">
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Product Name" [(ngModel)]="product.product_name" name="product_name"
+                        required>
+                    <mat-error>{{getProductNameErrorMessage()}}</mat-error>
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field class="example-full-width">
+                    <mat-select matInput placeholder="location" [(ngModel)]="product.location" name="location">
+                        <mat-option value="">Select location</mat-option>
+                        <mat-option value="harare">Harare</mat-option>
+                        <mat-option value="bulawayo">Bulawayo</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row bg-light">
+            <div class="col-md-6">
+                <mat-form-field class="example-full-width">
+                    <input matInput [matDatepicker]="date_available" placeholder="Date Available"
+                        [(ngModel)]="product.date_available" name="date_available">
+                    <mat-datepicker-toggle matSuffix [for]="date_available"></mat-datepicker-toggle>
+                    <mat-datepicker #date_available></mat-datepicker>
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field class="example-full-width">
+                    <mat-select matInput placeholder="Delivery Mode" [(ngModel)]="product.delivery_mode"
+                        name="delivery_mode">
+                        <mat-option value="">Select delivery mode</mat-option>
+                        <mat-option value="car">Car</mat-option>
+                        <mat-option value="bike">Bike</mat-option>
+                        <mat-option value="aeroplane">Aeroplane</mat-option>
+                        <mat-option value="pick up">Pick Up</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row bg-light">
+            <div class="col-md-6">
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="SKU Name" [(ngModel)]="product.sku.sku_name" name="sku">
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field class="example-full-width">
+                    <mat-select matInput placeholder="SKU Status" [(value)]="selected_sku_status"
+                        [(ngModel)]="product.sku.sku_status" name="sku_status">
+                        <mat-option value="">Select SKU Status</mat-option>
+                        <mat-option value="true">Active</mat-option>
+                        <mat-option value="false">In Active</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row bg-light">
+            <div class="col-md-6">
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Quantity" type="number" [(ngModel)]="product.quantity" name="quantity">
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Minimum Quantity" type="number" [(ngModel)]="product.minimum_quantity"
+                        name="minimum_quantity">
+                </mat-form-field>
+            </div>
+        </div>
+
+
+        <div class="row bg-light">
+            <div class="col-md-6">
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Price" type="number" [(ngModel)]="product.price" name="price">
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Discount" type="number" [(ngModel)]="product.discount" name="discount">
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row bg-light">
+            <div class="col-md-6">
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Manufacturer" [(ngModel)]="product.manufacturer_id"
+                        name="manufacturer_id">
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Supplier" [(ngModel)]="product.supplier" name="supplier">
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row bg-light">
+            <div class="col-md-6">
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="UPC" [(ngModel)]="product.upc" name="upc">
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field class="example-full-width">
+                    <mat-select matInput placeholder="Status" [(ngModel)]="product.status" name="status">
+                        <mat-option value="">Select status</mat-option>
+                        <mat-option value="active">Active</mat-option>
+                        <mat-option value="inactive">In Active</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+        <button mat-raised-button (click)="onCloseClick()" class="btn btn-round pull-right">Close
+        </button>
+        <button mat-raised-button type="submit" (click)="addProduct(product)"
+            class="btn btn-success btn-round pull-right">Save
+        </button>
+    </form>
+</div>
