@@ -1,0 +1,65 @@
+.tabs {
+margin: 20px 0 20px 0;
+width: 100%;
+}
+
+.customerGroups_table {
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+.customerGroups_table  th, td {
+        width: 48.5%
+}
+
+.prompt-button-red {
+  background-color: red;
+  color: white;
+  text-align: center;
+  margin-right: 4px;
+  width: 30%;
+}
+
+.prompt-button-green {
+  background-color: green;
+  color: white;
+  text-align: center;
+  margin-right: 4px;
+  width: 30%;
+}
+
+.delete_icon ,.view_icon{
+  cursor: pointer; 
+}
+
+.filter{
+  width: 100%;
+}
+
+.example-h2 {
+  margin: 10px;
+}
+
+.example-section {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height: 60px;
+}
+
+.example-margin {
+  margin: 10px;
+}
+
+.custom-checkbox .custom-control-input:checked ~ .custom-control-label::before {
+  background-color:#ed571f !important;
+  border:#ed571f  !important;
+}
+
+.status {
+  margin-top: 10px;
+}
+
+.status_heading {
+   padding-right: 12px;
+}

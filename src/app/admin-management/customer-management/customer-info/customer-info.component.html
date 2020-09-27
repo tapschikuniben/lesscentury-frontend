@@ -1,0 +1,97 @@
+<div class="row">
+    <div class="status col-md-6 d-flex justify-content-start">
+        <div class="status_heading">
+            <p>Status</p>
+        </div>
+        <li style="list-style: none">
+            <span
+                style="display: inline-block;width: 14px;height: 16px;margin-right: 6px;vertical-align: middle;background-color: #32b643;"></span>Active
+            <span
+                style="display: inline-block;width: 14px;height: 16px;margin-left: 3px;margin-right: 7px;vertical-align: middle;background-color: #ea5738e6;"></span>In
+            Active
+
+        </li>
+    </div>
+    <div class="col-md-6 d-flex justify-content-end">
+        <button mat-raised-button type="submit" class="btn btn-success btn-round" (click)="openNewCustomerDialog()">New
+            Customer</button>
+    </div>
+</div>
+
+<div *ngIf="CustomerData.length == 0">No added customers yet</div>
+<div *ngIf="CustomerData.length > 0" class="filter">
+    <mat-form-field>
+        <input matInput type="text" (keyup)="applyCustomerFilter($event.target.value)" placeholder="Filter">
+    </mat-form-field>
+</div>
+<div class="customers_table">
+    <table mat-table [dataSource]="dataSource">
+        <!-- Name Column -->
+        <ng-container matColumnDef="first_name">
+            <th mat-header-cell *matHeaderCellDef><b> First Name</b> </th>
+            <td mat-cell *matCellDef="let element"> {{element.first_name}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="last_name">
+            <th mat-header-cell *matHeaderCellDef><b> Last Name</b> </th>
+            <td mat-cell *matCellDef="let element"> {{element.last_name}}
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="email">
+            <th mat-header-cell *matHeaderCellDef><b>Email</b> </th>
+            <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="contact">
+            <th mat-header-cell *matHeaderCellDef><b> Contact </b></th>
+            <td mat-cell *matCellDef="let element"> {{element.contact}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="last_login">
+            <th mat-header-cell *matHeaderCellDef><b> Last Login</b> </th>
+            <td mat-cell *matCellDef="let element"> {{element.last_login | date : 'dd-MM-yyyy hh:mm'}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="country">
+            <th mat-header-cell *matHeaderCellDef><b> Country</b> </th>
+            <td mat-cell *matCellDef="let element"> {{element.country}} </td>
+        </ng-container>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="city">
+            <th mat-header-cell *matHeaderCellDef><b> City</b> </th>
+            <td mat-cell *matCellDef="let element"> {{element.city}} </td>
+        </ng-container>
+
+        <ng-container matColumnDef="view">
+            <th mat-header-cell *matHeaderCellDef><b> View</b> </th>
+            <td mat-cell *matCellDef="let element" (click)="openCustomerDetail(element)">
+                <mat-icon class="view_icon">preview
+                </mat-icon>
+            </td>
+        </ng-container>
+
+        <ng-container matColumnDef="action">
+            <th mat-header-cell *matHeaderCellDef> <b>
+                    <div>Action</div>
+                </b></th>
+            <td mat-cell *matCellDef="let element; let i = index;">
+                <mat-icon (click)="confirmDialog(i, element)" class="delete_icon">delete_outline
+                </mat-icon>
+            </td>
+        </ng-container>
+
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+
+    <mat-paginator [pageSize]="pageSize" [pageSizeOptions]="pageSizeOptions" #customer_paginator="matPaginator"
+        showFirstLastButtons (page)="pageEvent = $event">
+    </mat-paginator>
+
+</div>

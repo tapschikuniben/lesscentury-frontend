@@ -30,10 +30,20 @@ import { NewCategoryComponent } from './catalog-management/new-category/new-cate
 import { CategoryDetailComponent } from './catalog-management/category-detail/category-detail.component';
 import { DashboardComponent } from './dashboard-management/dashboard/dashboard.component';
 import { SalesComponent } from './sales-management/sales/sales.component';
-import { CustomersComponent } from './customer-management/customers/customers.component';
 import { ServicesComponent } from './services-management/services/services.component';
 import { CategoryInfoComponent } from './catalog-management/category-info/category-info.component';
 import { ProductInfoComponent } from './catalog-management/product-info/product-info.component';
+import { NewBrandComponent } from './catalog-management/new-brand/new-brand.component';
+import { BrandDetailComponent } from './catalog-management/brand-detail/brand-detail.component';
+import { BrandInfoComponent } from './catalog-management/brand-info/brand-info.component';
+import { CustomerComponent } from './customer-management/customer/customer.component';
+import { CustomerStatsComponent } from './customer-management/customer-stats/customer-stats.component';
+import { CustomerInfoComponent } from './customer-management/customer-info/customer-info.component';
+import { NewCustomerComponent } from './customer-management/new-customer/new-customer.component';
+import { CustomerDetailComponent } from './customer-management/customer-detail/customer-detail.component';
+import { CustomerGroupInfoComponent } from './customer-management/customer-group-info/customer-group-info.component';
+import { NewCustomerGroupComponent } from './customer-management/new-customer-group/new-customer-group.component';
+import { CustomerGroupDetailComponent } from './customer-management/customer-group-detail/customer-group-detail.component';
 
 const AdminManagementRoutes: Routes = [
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
@@ -62,7 +72,7 @@ const AdminManagementRoutes: Routes = [
     path: '',
     component: AdminLayoutComponent,
     children: [
-      { path: 'customers', component: CustomersComponent },
+      { path: 'customers', component: CustomerComponent },
     ]
   },
   {
@@ -76,7 +86,28 @@ const AdminManagementRoutes: Routes = [
 
 
 @NgModule({
-  declarations: [CatalogComponent, ProductStatsComponent, NewProductComponent, ConfirmDialogComponent, ProductDetailComponent, NewCategoryComponent, CategoryDetailComponent, CategoryInfoComponent, ProductInfoComponent],
+  declarations: [
+    CatalogComponent,
+    ProductStatsComponent,
+    NewProductComponent,
+    ConfirmDialogComponent,
+    ProductDetailComponent,
+    NewCategoryComponent,
+    CategoryDetailComponent,
+    CategoryInfoComponent,
+    ProductInfoComponent,
+    NewBrandComponent,
+    BrandDetailComponent,
+    BrandInfoComponent,
+    CustomerComponent,
+    CustomerStatsComponent,
+    CustomerInfoComponent,
+    NewCustomerComponent,
+    CustomerDetailComponent,
+    CustomerGroupInfoComponent,
+    NewCustomerGroupComponent,
+    CustomerGroupDetailComponent,
+  ],
   imports: [
     CommonModule,
     FormsModule,

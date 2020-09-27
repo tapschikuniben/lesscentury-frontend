@@ -1,0 +1,29 @@
+<div class="card card-plain">
+    <div class="card-header card-header-success">
+        <h4 class="card-title">Customer Group</h4>
+    </div><br />
+    <form class="needs-validation" #f="ngForm">
+        <div class="row bg-light">
+            <div class="col-md-6">
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Group Name" [(ngModel)]="customerGroup.customerGroup_name"
+                        name="customerGroup_name">
+                </mat-form-field>
+            </div>
+            <div class="col-md-6">
+                <mat-form-field class="example-full-width">
+                    <mat-select matInput placeholder="Status" [(ngModel)]="customerGroup.status" name="status">
+                        <mat-option value="">Select status</mat-option>
+                        <mat-option value="active">Active</mat-option>
+                        <mat-option value="inactive">In Active</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+        <button mat-raised-button (click)="onCloseClick()" class="btn btn-round pull-right">Close
+        </button>
+        <button mat-raised-button type="submit" (click)="updateCustomerGroup(customerGroup)"
+            class="btn btn-success btn-round pull-right">Update
+        </button>
+    </form>
+</div>
