@@ -3,6 +3,7 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Product } from 'src/app/models/product';
 import { NotifierService } from 'src/app/services/notifier.service';
 import { ProductService } from 'src/app/services/product.service';
+import { UploadFilesService } from 'src/app/services/upload-product-files.service';
 
 @Component({
   selector: 'app-product-detail',
@@ -12,17 +13,21 @@ import { ProductService } from 'src/app/services/product.service';
 export class ProductDetailComponent implements OnInit {
 
   public product: Product;
+  public ProductData: [] = [];
+  public productfiles = [];
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public productdatainfo: any,
     private productService: ProductService,
     private notifier: NotifierService,
     public dialogRef: MatDialogRef<ProductDetailComponent>,
+    private uploadProductFilesService: UploadFilesService,
   ) { }
 
   ngOnInit(): void {
     this.initializeProduct();
     this.getProduct();
+    this.getProductImages();
   }
 
   initializeProduct(): void {
@@ -72,6 +77,16 @@ export class ProductDetailComponent implements OnInit {
         this.product = returnedproduct;
       })
     }
+  }
+
+  // get product images
+  getProductImages(): void {
+    this.uploadProductFilesService.getFiles().subscribe(data => {
+      this.ProductData = data;
+      this.ProductData['productFiles'].filter(c => c.product_id === this.productdatainfo.id).map(element => {
+        this.productfiles.push(...element['avatar']);
+      });
+    })
   }
 
   // update product

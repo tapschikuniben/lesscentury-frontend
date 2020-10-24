@@ -27,6 +27,13 @@
 <div class="brands_table">
     <table mat-table [dataSource]="dataSource">
         <!-- Name Column -->
+        <ng-container matColumnDef="avatar">
+            <th mat-header-cell *matHeaderCellDef><b> Logo</b> </th>
+            <td mat-cell *matCellDef="let element">
+                <img class="list-item-avatar" [src]="element.avatar" />
+            </td>
+        </ng-container>
+        <!-- Name Column -->
         <ng-container matColumnDef="brand_name">
             <th mat-header-cell *matHeaderCellDef><b> Brand Name</b> </th>
             <td mat-cell *matCellDef="let element"> {{element.brand_name}} </td>

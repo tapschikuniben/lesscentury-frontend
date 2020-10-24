@@ -6,8 +6,8 @@ import { NotifierService } from 'src/app/services/notifier.service';
 import { BrandDetailComponent } from '../brand-detail/brand-detail.component';
 import { NewBrandComponent } from '../new-brand/new-brand.component';
 import { Brand } from '../../../models/brand';
-import { BrandService } from '../../../services/brand.service';
 import { ConfirmDialogComponent } from '../../confirm-dialog/confirm-dialog.component';
+import { FileUploadService } from 'src/app/services/file-upload.service';
 
 
 @Component({
@@ -26,17 +26,18 @@ export class BrandInfoComponent implements OnInit {
   public pageSizeOptions: number[] = [];
   public pageEvent: PageEvent;
   public pageSize = 5;
-  public displayedBrandColumns: string[] = ['brand_name', 'status', 'view', 'action'];
+  public displayedBrandColumns: string[] = ['avatar', 'brand_name', 'status', 'view', 'action'];
+  public Brands: any = [];
 
 
   constructor(
-    private brandService: BrandService,
     private dialog: MatDialog,
     private notifier: NotifierService,
+    private fileUploadService: FileUploadService,
   ) { }
 
   ngOnInit(): void {
-    this.getAllBrands();
+    this.getBrands();
     this.initializePageSizeOptions();
   }
 
@@ -49,15 +50,14 @@ export class BrandInfoComponent implements OnInit {
     });
 
     this.brandDialogRef.afterClosed().subscribe(result => {
-      this.getAllBrands();
+      //this.getAllBrands();
     });
   }
 
   //getting all brands
-  getAllBrands(): void {
-    // get main brand
-    this.brandService.getAllBrands().subscribe(data => {
-      this.BrandData = data;
+  getBrands() {
+    this.fileUploadService.getBrands().subscribe((res) => {
+      this.BrandData = res['brands'];
       this.dataSource = new MatTableDataSource<Brand>(this.BrandData);
       setTimeout(() => {
         this.dataSource.paginator = this.brand_paginator;
@@ -90,7 +90,7 @@ export class BrandInfoComponent implements OnInit {
     console.log('page index', this.brand_paginator.pageIndex)
     data.splice((this.brand_paginator.pageIndex * this.brand_paginator.pageSize) + index, 1);
     this.dataSource.data = data;
-    this.brandService.deleteBrand(e.id).subscribe()
+    this.fileUploadService.deleteBrand(e.id).subscribe()
   }
 
   //open brand details
@@ -106,7 +106,7 @@ export class BrandInfoComponent implements OnInit {
     });
 
     dialogRef.afterClosed().subscribe(result => {
-      this.getAllBrands();
+      //this.getAllBrands();
     });
   }
 

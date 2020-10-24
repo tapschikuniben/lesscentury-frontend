@@ -2,7 +2,6 @@
     <div class="card-header card-header-success">
         <h4 class="card-title">Product</h4>
     </div><br />
-    <mat-label>Basic Information</mat-label>
     <form class="needs-validation" #f="ngForm">
         <div class="row bg-light">
             <div class="col-md-6">
@@ -49,7 +48,7 @@
         <div class="row bg-light">
             <div class="col-md-6">
                 <mat-form-field class="example-full-width">
-                    <input matInput placeholder="SKU" [(ngModel)]="product.sku" name="sku">
+                    <input matInput placeholder="SKU" [(ngModel)]="product.sku.sku_name" name="sku">
                 </mat-form-field>
             </div>
             <div class="col-md-6">
@@ -115,6 +114,18 @@
                         <mat-option value="inactive">In Active</mat-option>
                     </mat-select>
                 </mat-form-field>
+            </div>
+        </div>
+
+        <!-- <div class="row bg-light" *ngIf="productfiles">
+            <div *ngFor="let images of productfiles">
+                <img class="list-item-avatar" [src]="images" />
+            </div>
+        </div> -->
+
+        <div class="row" *ngIf="productfiles">
+            <div class="col-sm-4" *ngFor="let images of productfiles">
+                <img class="image-block" [src]="images" />
             </div>
         </div>
         <button mat-raised-button (click)="onCloseClick()" class="btn btn-round pull-right">Close

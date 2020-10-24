@@ -1,0 +1,29 @@
+<!-- <img src="./../../../assets/img/bg.jpg" class="carousel_image overlay" alt="Random slide"> -->
+<ngb-carousel *ngIf="images" [showNavigationArrows]="showNavigationArrows"
+    [showNavigationIndicators]="showNavigationIndicators">
+    <ng-template ngbSlide *ngFor="let image of images">
+        <div class="picsum-img-wrapper">
+            <img [src]="image" class="carousel_image overlay" alt="Random slide">
+        </div>
+        <div class="carousel-caption">
+            <div class="row carousel-row">
+                <div class="col-xl-6 col-lg-7 text-white">
+                    <h3>{{title}}</h3>
+                    <h2>{{product_name}}</h2>
+                    <p>{{product_description}} </p>
+                    <p>Product ID{{product_id}}</p>
+                    <br />
+                    <button type="button" class="btn btn-success discover_button">Discover</button>
+                    <button type="button" class="btn btn-primary add_to_button">Add To Cart</button>
+                </div>
+                <div class="price_tag col-xl-6 col-lg-5">
+                    <div class="price_card">
+                        <span>from</span>
+                        <h3>$29</h3>
+                        <p>SHOP NOW</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </ng-template>
+</ngb-carousel>

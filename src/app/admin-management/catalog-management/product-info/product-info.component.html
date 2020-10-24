@@ -88,6 +88,14 @@
             </td>
         </ng-container>
 
+        <ng-container matColumnDef="upload">
+            <th mat-header-cell *matHeaderCellDef><b> Upload Images</b> </th>
+            <td mat-cell *matCellDef="let element" (click)="uploadProductImage(element)">
+                <mat-icon class="view_icon">backup
+                </mat-icon>
+            </td>
+        </ng-container>
+
         <ng-container matColumnDef="view">
             <th mat-header-cell *matHeaderCellDef><b> View</b> </th>
             <td mat-cell *matCellDef="let element" (click)="openProductDetail(element)">

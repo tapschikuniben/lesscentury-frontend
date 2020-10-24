@@ -13,7 +13,6 @@ export class NewProductComponent implements OnInit {
 
   public product: Product;
   public onProductCreation = new EventEmitter();
-  public selected_sku_status: boolean = true;
 
   constructor(
     private productService: ProductService,

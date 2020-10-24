@@ -1,3 +1,21 @@
 .example-full-width {
     width: 100%;
 }
+
+.headermessage {
+  margin: 19px;
+  color: black;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+}
+.image-block {
+    border: 3px solid white ;
+    background-color: whitw;
+    padding: 0px;    
+    margin-bottom: 7px;
+    height:250px;
+    width: 100%;
+    text-align: center; 
+    vertical-align: bottom;
+}

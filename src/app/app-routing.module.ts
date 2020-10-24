@@ -9,6 +9,7 @@ import { BoardUserComponent } from './board-user/board-user.component';
 import { BoardModeratorComponent } from './board-moderator/board-moderator.component';
 import { BoardAdminComponent } from './board-admin/board-admin.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout/admin-layout.component';
+import { ClientLayoutComponent } from './layouts/client-layout/client-layout.component';
 
 const routes: Routes = [
   // { path: 'home', component: HomeComponent },
@@ -38,6 +39,14 @@ const routes: Routes = [
     component: AdminLayoutComponent,
     children: [
       { path: 'admin-management', loadChildren: '../admin-management/admin-management.module#AdminLayoutModule' },
+    ]
+  },
+
+  {
+    path: '',
+    component: ClientLayoutComponent,
+    children: [
+      { path: 'client-management', loadChildren: '../client-management/client-management.module#ClientManagementModule' },
     ]
   },
 ];

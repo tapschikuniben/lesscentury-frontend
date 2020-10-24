@@ -44,6 +44,7 @@ import { CustomerDetailComponent } from './customer-management/customer-detail/c
 import { CustomerGroupInfoComponent } from './customer-management/customer-group-info/customer-group-info.component';
 import { NewCustomerGroupComponent } from './customer-management/new-customer-group/new-customer-group.component';
 import { CustomerGroupDetailComponent } from './customer-management/customer-group-detail/customer-group-detail.component';
+import { UploadProductImageComponent } from './catalog-management/upload-product-image/upload-product-image.component';
 
 const AdminManagementRoutes: Routes = [
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
@@ -107,6 +108,7 @@ const AdminManagementRoutes: Routes = [
     CustomerGroupInfoComponent,
     NewCustomerGroupComponent,
     CustomerGroupDetailComponent,
+    UploadProductImageComponent,
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,91 @@
+.container {
+    padding: 100px;
+    margin: 0 auto;
+    width: 700px;
+}
+
+.row {
+	margin-bottom: 40px;
+}
+
+.picsum-img-wrapper {
+    width: 100%;
+    height: 80vh;
+}
+
+.carousel_image {
+    width: 100%;
+    height: 80vh;
+}
+
+.overlay {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.5;
+  filter: alpha(opacity = 50) /* required for opacity to work in IE*/;
+  /*filter: blur(1px);*/
+}
+
+.carousel-caption {
+  width: 80%;
+  margin-right: 10%;
+  top: 0;
+  transform: translateY(-50%);
+  transform: translateX(-4%);
+  text-align: left;
+  padding-left: 0;
+}
+
+.carousel-caption h3 {
+  font-size: 25px;
+  font-weight: bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.carousel-caption h2 {
+  font-size: 65px;
+  font-weight: bold;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.discover_button {
+  background:  #d87093;
+  font-size: 15px;
+  cursor: pointer;
+  border: none;
+  margin: 0 0 0 3px;
+  height: 50px;
+  width: 200px;
+}
+
+.add_to_button {
+  background:  #d87093;
+  font-size: 17px;
+  cursor: pointer;
+  border: none;
+  margin: 0 0 0 3px;
+  height: 50px;
+  width: 200px;
+}
+
+.carousel-row {
+  margin-top: 6%;
+}
+
+.price_tag {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.price_card {
+  background-color:  #d87093;
+  height: 200px;
+  width: 200px;
+  text-align: center;
+  border-radius: 100%;
+  margin-top: 50px;
+  padding: 35px;
+}

@@ -16,7 +16,7 @@ import { BoardUserComponent } from './board-user/board-user.component';
 
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { CommonModule } from '@angular/common';
-import { PreloadAllModules, RouterModule } from '@angular/router';
+import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatButtonModule } from '@angular/material/button';
@@ -46,14 +46,18 @@ import { OverlayModule } from '@angular/cdk/overlay';
 import { NotifierService } from './services/notifier.service';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { AdminLayoutModule } from './layouts/admin-layout/admin-layout.module';
+import { ClientLayoutModule } from './layouts/client-layout/client-layout.module';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout/admin-layout.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { DragDropFileUploadDirective } from './directives/drag-drop-file-upload.directive';
+import { ClientLayoutComponent } from './layouts/client-layout/client-layout.component';
 
 
 @NgModule({
   imports: [
     CommonModule,
     AdminLayoutModule,
+    ClientLayoutModule,
     BrowserModule,
     BrowserAnimationsModule,
     FormsModule,
@@ -100,6 +104,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     BoardModeratorComponent,
     BoardUserComponent,
     NavbarComponent,
+    DragDropFileUploadDirective,
+    ClientLayoutComponent,
   ],
   providers: [authInterceptorProviders, NotifierService, MatSnackBarModule],
   bootstrap: [AppComponent]

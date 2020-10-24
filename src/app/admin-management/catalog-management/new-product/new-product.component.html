@@ -54,11 +54,11 @@
             </div>
             <div class="col-md-6">
                 <mat-form-field class="example-full-width">
-                    <mat-select matInput placeholder="SKU Status" [(value)]="selected_sku_status"
-                        [(ngModel)]="product.sku.sku_status" name="sku_status">
+                    <mat-select matInput placeholder="SKU Status" [(ngModel)]="product.sku.sku_status"
+                        name="sku_status">
                         <mat-option value="">Select SKU Status</mat-option>
-                        <mat-option value="true">Active</mat-option>
-                        <mat-option value="false">In Active</mat-option>
+                        <mat-option value="active">Active</mat-option>
+                        <mat-option value="inactive">In Active</mat-option>
                     </mat-select>
                 </mat-form-field>
             </div>
@@ -122,10 +122,11 @@
                 </mat-form-field>
             </div>
         </div>
-        <button mat-raised-button (click)="onCloseClick()" class="btn btn-round pull-right">Close
-        </button>
         <button mat-raised-button type="submit" (click)="addProduct(product)"
             class="btn btn-success btn-round pull-right">Save
         </button>
+        <button mat-raised-button (click)="onCloseClick()" class="btn btn-round pull-right">Close
+        </button>
+
     </form>
 </div>

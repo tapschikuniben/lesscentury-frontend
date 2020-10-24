@@ -9,6 +9,7 @@ import { ProductService } from 'src/app/services/product.service';
 import { ConfirmDialogComponent } from '../../confirm-dialog/confirm-dialog.component';
 import { NewProductComponent } from '../new-product/new-product.component';
 import { ProductDetailComponent } from '../product-detail/product-detail.component';
+import { UploadProductImageComponent } from '../upload-product-image/upload-product-image.component';
 
 @Component({
   selector: 'app-product-info',
@@ -29,7 +30,7 @@ export class ProductInfoComponent implements OnInit {
   public color: ThemePalette = 'accent';
   public checked = false;
   public disabled = false;
-  public displayedColumns: string[] = ['product_name', 'sku', 'price', 'delivery_mode', 'quantity', 'status', 'is_feature', 'todays_deals', 'view', 'action'];
+  public displayedColumns: string[] = ['product_name', 'sku', 'price', 'delivery_mode', 'quantity', 'status', 'is_feature', 'todays_deals', 'upload', 'view', 'action'];
 
 
   constructor(
@@ -128,6 +129,19 @@ export class ProductInfoComponent implements OnInit {
         this.notifier.Notification("warning", "failed to update.");
       }
     })
+  }
+
+  //upload images
+  uploadProductImage(selected) {
+    const dialogRef = this.dialog.open(UploadProductImageComponent, {
+      width: '50%',
+      maxHeight: '620px',
+      data: selected,
+    });
+
+    dialogRef.updatePosition({
+      top: '4%',
+    });
   }
 
   public todayDealsChange(currentproduct) {

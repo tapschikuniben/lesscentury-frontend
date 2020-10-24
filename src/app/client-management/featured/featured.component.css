@@ -1,0 +1,57 @@
+.content {
+    padding: 16px;
+    width: 80%;
+}
+
+.content mat-card {
+    margin-bottom: 16px;
+    height: 400px;
+}
+
+.image{
+     height: 100%;
+}
+
+.product-cards {
+     display: flex;
+     justify-content: center;
+}
+
+.header {
+     display: flex;
+     justify-content: center;
+     margin: 15px 0 0 0;
+}
+
+.announce {
+     height: 65px;
+     display: flex;
+}
+
+.payments {
+     background-color: green;
+     color: white;
+     width: 33.3%;
+     padding:10px;
+     display: flex;
+     justify-content: center;
+}
+
+.premium {
+   background-color: pink;
+     color: white;
+     width: 33.3%;
+     padding:10px;
+     display: flex;
+     justify-content: center;
+}
+
+.delivery {
+   background-color: blue;
+     color: white;
+     width: 33.3%;
+     padding:10px;
+     display: flex;
+     justify-content: center;
+      
+}
