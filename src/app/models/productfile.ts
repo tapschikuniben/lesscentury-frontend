@@ -4,4 +4,6 @@ export class ProductFile {
     created_by: string;
     modified_by: string;
     product_id: string;
+    product_name: string;
+    product_amount: string;
 }

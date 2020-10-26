@@ -1,4 +1,4 @@
-<div class="announce">
+<!-- <div class="announce">
     <div class="payments">
         <h2><b>FAST SECURE PAYMENTS</b></h2>
     </div>
@@ -8,16 +8,38 @@
     <div class="delivery">
         <h2><b>FREE & FAST DELIVERY</b></h2>
     </div>
-</div>
-<div class="header">
-    <h3>TRENDING ITEMS</h3>
-</div>
-<div class="product-cards">
-    <div class="content" fxLayout="row wrap" fxLayoutGap="16px grid">
-        <div [fxFlex]="(100/gridColumns) + '%'" fxFlex.xs="100%" fxFlex.sm="33%" *ngFor="let num of [1,2,3,4,5,6,7]">
-            <mat-card class="mat-elevation-z0">
-                <img mat-card-image class="image" src="https://material.angular.io/assets/img/examples/shiba2.jpg">
-            </mat-card>
+</div> -->
+
+<div class="card-body">
+    <div class="header">
+        <h3>TRENDING ITEMS</h3>
+    </div>
+    <div class="product-cards">
+        <div class="content" fxLayout="row wrap" fxLayoutGap="16px grid" *ngIf="productfiles">
+            <div [fxFlex]="(100/gridColumns) + '%'" fxFlex.xs="100%" fxFlex.sm="33%"
+                *ngFor="let productfile of productfiles">
+                <mat-card appMaterialElevation [defaultElevation]="defaultElevation" raisedElevation="16"
+                    class="product_image">
+                    <img mat-card-image class="image" [src]="productfile.avatar[0]">
+                    <div>
+                        <p>{{productfile.product_name}}</p>
+                        <p><b>{{productfile.product_amount | currency}}</b></p>
+                    </div>
+                    <div class="overlay">
+                        <div class="row">
+                            <button mat-icon-button class="card_button" color="accent"
+                                aria-label="Example icon button with a menu icon"
+                                (click)="onSelectProduct(productfile.product_id)">
+                                <mat-icon>visibility</mat-icon>
+                            </button>
+                            <button mat-icon-button class="card_button" color="accent"
+                                aria-label="Example icon button with a menu icon">
+                                <mat-icon>local_mall</mat-icon>
+                            </button>
+                        </div>
+                    </div>
+                </mat-card>
+            </div>
         </div>
     </div>
 </div>

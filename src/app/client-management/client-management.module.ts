@@ -16,6 +16,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule } from '@angular/material/button';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { FooterComponent } from './footer/footer.component';
+import { MaterialElevationDirective } from './../directives/material-elevation.directive';
+import { ProductInfoComponent } from './product-info/product-info.component';
 
 const ClientManagementRoutes: Routes = [
   {
@@ -23,20 +25,28 @@ const ClientManagementRoutes: Routes = [
     component: ClientLayoutComponent,
     children: [
       { path: 'home', component: HomeComponent },
+      { path: 'product/:id', component: ProductInfoComponent },
     ]
   },
 ];
 
 @NgModule({
-  declarations: [HomeComponent, NavbarComponent, CarouselComponent, FeaturedComponent, FooterComponent],
+  declarations: [
+    HomeComponent,
+    NavbarComponent,
+    CarouselComponent,
+    FeaturedComponent,
+    FooterComponent,
+    MaterialElevationDirective,
+    ProductInfoComponent],
   imports: [
     CommonModule,
     BrowserModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
     NgbModule,
     RouterModule.forChild(ClientManagementRoutes),
     FormsModule,
-    ReactiveFormsModule,
-    BrowserAnimationsModule,
     FlexLayoutModule,
 
     //MatModules

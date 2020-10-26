@@ -11,6 +11,7 @@ import { UploadFilesService } from 'src/app/services/upload-product-files.servic
 export class CarouselComponent implements OnInit {
 
   public ProductData: [] = [];
+  public images = [];
 
   public title = 'New Arrivals';
   public product_name = 'DENIM JACKETS';
@@ -18,7 +19,7 @@ export class CarouselComponent implements OnInit {
 
   showNavigationArrows = false;
   showNavigationIndicators = false;
-  images = [];
+
   /*images = [1055, 194, 368].map((n) => `https://picsum.photos/id/${n}/900/500`);*/
 
 

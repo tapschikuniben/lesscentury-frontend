@@ -41,7 +41,9 @@ export class UploadProductImageComponent implements OnInit {
       avatar: [null],
       created_by: this.productfile.created_by,
       modified_by: this.productfile.modified_by,
-      product_id: this.productfile.product_id
+      product_id: this.productfile.product_id,
+      product_name: this.productfile.product_name,
+      product_amount: this.productfile.product_amount,
     })
   };
 
@@ -50,7 +52,9 @@ export class UploadProductImageComponent implements OnInit {
       _id: '',
       created_by: '',
       modified_by: '',
-      product_id: this.productdatainfo.id
+      product_id: this.productdatainfo.id,
+      product_name: this.productdatainfo.product_name,
+      product_amount: this.productdatainfo.amount
     }
   }
 

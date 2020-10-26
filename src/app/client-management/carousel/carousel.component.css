@@ -20,13 +20,16 @@
 
 .overlay {
   position: absolute;
-  width: 100%;
   top: 0;
+  bottom: 0;
   left: 0;
-  background: #000;
-  opacity: 0.5;
-  filter: alpha(opacity = 50) /* required for opacity to work in IE*/;
-  /*filter: blur(1px);*/
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 1;
+  filter: alpha(opacity = 100) /* required for opacity to work in IE*/;
+  transition: .3s ease;
+  background-color: #000000;
 }
 
 .carousel-caption {
@@ -43,12 +46,24 @@
   font-size: 25px;
   font-weight: bold;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #ffffff;
+  text-shadow: 1px 1px #000000;
 }
 
 .carousel-caption h2 {
   font-size: 65px;
   font-weight: bold;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #ffffff;
+  text-shadow: 1px 1px #000000;
+}
+
+.carousel-caption p {
+  text-shadow: 1px 1px #000000;
+}
+
+.price_card_in{
+  font-family: cursive;
 }
 
 .discover_button {
@@ -56,6 +71,7 @@
   font-size: 15px;
   cursor: pointer;
   border: none;
+  border-radius: 0;
   margin: 0 0 0 3px;
   height: 50px;
   width: 200px;
@@ -66,6 +82,7 @@
   font-size: 17px;
   cursor: pointer;
   border: none;
+  border-radius: 0;
   margin: 0 0 0 3px;
   height: 50px;
   width: 200px;
@@ -84,8 +101,20 @@
   background-color:  #d87093;
   height: 200px;
   width: 200px;
-  text-align: center;
   border-radius: 100%;
   margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*box-shadow: 2px 2px #888888;*/
+}
+
+.price_card_in {
+  border: solid 2px #fefefe ;
+  border-radius: 100%;
+  text-align: center;
   padding: 35px;
+  top: 0;
+  height: 190px;
+  width: 190px;
 }

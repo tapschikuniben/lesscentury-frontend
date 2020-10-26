@@ -5,7 +5,17 @@
 
 .content mat-card {
     margin-bottom: 16px;
-    height: 400px;
+    height: 450px;
+}
+
+mat-card img {
+     height: 330px;
+}
+
+.product_image {
+     /*border: solid 1px #d87093;*/
+     border-top: none;
+     border-radius: 0;
 }
 
 .image{
@@ -20,25 +30,30 @@
 .header {
      display: flex;
      justify-content: center;
-     margin: 15px 0 0 0;
+     border-bottom: solid 3px #d87093;
+     width: 80%;
+     margin-left: 10%;
+     margin-bottom: 10px;
 }
 
 .announce {
      height: 65px;
      display: flex;
+     font-family: cursive;
 }
 
 .payments {
-     background-color: green;
+     background-color: #d87093;
      color: white;
      width: 33.3%;
      padding:10px;
      display: flex;
      justify-content: center;
+
 }
 
 .premium {
-   background-color: pink;
+   background-color: #ffc0cb;
      color: white;
      width: 33.3%;
      padding:10px;
@@ -47,11 +62,53 @@
 }
 
 .delivery {
-   background-color: blue;
+   background-color: #d87093;
      color: white;
      width: 33.3%;
      padding:10px;
      display: flex;
      justify-content: center;
-      
+}
+
+.card-body {
+     background-color: #ffffff;
+}
+
+
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: .3s ease;
+  background-color: #000000;
+  color: #fefefe;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.content :hover .overlay {
+  opacity: 0.8;
+}
+
+.overlay .row {
+     margin-left: 10px;
+     margin-top: 250px;
+     height: 65px;
+} 
+.card_button {
+  background: #d87093;
+  font-size: 17px;
+  cursor: pointer;
+  border: none;
+  height: 60px;
+  width: 60px;
+  margin-right: 5px;
+  border-radius: 100%;
+  color: #fefefe;
 }
