@@ -19,6 +19,8 @@ import { FooterComponent } from './footer/footer.component';
 import { MaterialElevationDirective } from './../directives/material-elevation.directive';
 import { ProductInfoComponent } from './product-info/product-info.component';
 import { CartComponent } from './cart/cart.component';
+import { CheckoutComponent } from './checkout/checkout.component';
+import { CategoryComponent } from './category/category.component';
 
 const ClientManagementRoutes: Routes = [
   {
@@ -28,6 +30,7 @@ const ClientManagementRoutes: Routes = [
       { path: 'home', component: HomeComponent },
       { path: 'product/:id', component: ProductInfoComponent },
       { path: 'cart', component: CartComponent },
+      { path: 'checkout', component: CheckoutComponent },
 
     ]
   },
@@ -42,7 +45,9 @@ const ClientManagementRoutes: Routes = [
     FooterComponent,
     MaterialElevationDirective,
     ProductInfoComponent,
-    CartComponent],
+    CartComponent,
+    CheckoutComponent,
+    CategoryComponent],
   imports: [
     CommonModule,
     BrowserModule,

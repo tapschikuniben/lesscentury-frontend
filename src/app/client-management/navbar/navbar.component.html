@@ -2,10 +2,16 @@
     <div class="toolbar-content">
         <img class="logo" src="../../../assets/imgs/lesscentury.jpeg" alt="lesscentury">
     </div>
-    <div class="search">
+    <!-- <div class="search">
         <input type="text" placeholder="Search.." name="search">
         <button class="search_button" type="submit"><i class="fa fa-search"></i></button>
+    </div> -->
+    <div class="search_box">
+        <input type="text" placeholder="Search.." name="search">
+        <button type="submit"><i class="fa fa-search"></i></button>
     </div>
+ 
+
     <span class="example-spacer"></span>
     <div class="my-nav-links">
         <ul class="nav">
@@ -15,7 +21,7 @@
                     <i class="material-icons">perm_identity</i> Sign In
                 </a>
             </li>
-            <button type="button" class="btn btn-success sign_up_button">Sign Up</button>
+            <button type="button" class="btn sign_up_button">Sign Up</button>
             <li class="top_nav-item">
                 <a mat-button class="top_nav-link" [routerLinkActive]="['active']" data-toggle="tab"
                     [routerLink]="['/cart']">
