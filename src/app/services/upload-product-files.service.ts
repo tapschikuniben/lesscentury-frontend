@@ -10,7 +10,9 @@ import { Product } from '../models/product';
 })
 export class UploadFilesService {
 
-    private baseUrl = 'http://localhost:3000';
+    //private baseUrl = 'http://localhost:3000';
+    private baseUrl = 'https://lesscentury-frontend.herokuapp.com'
+    
 
     constructor(private http: HttpClient) { }
 
