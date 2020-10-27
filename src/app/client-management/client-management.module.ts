@@ -18,6 +18,7 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { FooterComponent } from './footer/footer.component';
 import { MaterialElevationDirective } from './../directives/material-elevation.directive';
 import { ProductInfoComponent } from './product-info/product-info.component';
+import { CartComponent } from './cart/cart.component';
 
 const ClientManagementRoutes: Routes = [
   {
@@ -26,6 +27,8 @@ const ClientManagementRoutes: Routes = [
     children: [
       { path: 'home', component: HomeComponent },
       { path: 'product/:id', component: ProductInfoComponent },
+      { path: 'cart', component: CartComponent },
+
     ]
   },
 ];
@@ -38,7 +41,8 @@ const ClientManagementRoutes: Routes = [
     FeaturedComponent,
     FooterComponent,
     MaterialElevationDirective,
-    ProductInfoComponent],
+    ProductInfoComponent,
+    CartComponent],
   imports: [
     CommonModule,
     BrowserModule,

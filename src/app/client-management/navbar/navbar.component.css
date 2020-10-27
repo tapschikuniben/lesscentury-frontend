@@ -13,7 +13,7 @@
 
 .search {
   margin-left: 10%;
-  width: 45%;
+  width: 35%;
 }
 
 .search input[type=text] {
@@ -22,7 +22,7 @@
   background-color: #EAECEE;
   border: solid 2px #d87093;
   border-right: none;
-  height: 50px;
+  height: 40px;
   padding-left: 5px;
   border-radius: 25px 0 0 25px;
 }
@@ -35,7 +35,7 @@
   border-left: none;
   font-size: 17px;
   cursor: pointer;
-  height: 50px;
+  height: 40px;
   width: 100px;
 }
 
@@ -93,8 +93,8 @@
   border: none;
   border-radius: 0;
   margin: 0 0 0 3px;
-  height: 50px;
-  width: 150px;
+  height: 40px;
+  width: 130px;
 }
 
 .nav{
