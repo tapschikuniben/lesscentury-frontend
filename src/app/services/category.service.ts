@@ -14,7 +14,7 @@ const httpOptions = {
 export class CategoryService {
 
     //private baseurl = 'http://localhost:3000/';
-    private baseurl = 'https://lesscentury-frontend.herokuapp.com/'
+    private baseurl = 'https://lesscentury.herokuapp.com/'
 
     constructor(private http: HttpClient) { }
 

@@ -10,7 +10,7 @@ import { Brand } from '../models/brand';
 export class FileUploadService {
 
     //baseURL = "http://localhost:3000/";
-    private baseURL = 'https://lesscentury-frontend.herokuapp.com/'
+    private baseURL = 'https://lesscentury.herokuapp.com/'
     headers = new HttpHeaders().set('Content-Type', 'application/json');
 
     constructor(private http: HttpClient) { }
