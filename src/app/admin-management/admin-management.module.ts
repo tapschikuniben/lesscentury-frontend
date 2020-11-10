@@ -45,6 +45,11 @@ import { CustomerGroupInfoComponent } from './customer-management/customer-group
 import { NewCustomerGroupComponent } from './customer-management/new-customer-group/new-customer-group.component';
 import { CustomerGroupDetailComponent } from './customer-management/customer-group-detail/customer-group-detail.component';
 import { UploadProductImageComponent } from './catalog-management/upload-product-image/upload-product-image.component';
+import { BannerInfoComponent } from './catalog-management/banner-info/banner-info.component';
+import { BannerDetailComponent } from './catalog-management/banner-detail/banner-detail.component';
+import { NewBannerComponent } from './catalog-management/new-banner/new-banner.component';
+import { SubscriptionInfoComponent } from './customer-management/subscription-info/subscription-info.component';
+import { ImageCropperModule } from 'ngx-image-cropper';
 
 const AdminManagementRoutes: Routes = [
   { path: '', redirectTo: 'dashboard', pathMatch: 'full' },
@@ -109,6 +114,10 @@ const AdminManagementRoutes: Routes = [
     NewCustomerGroupComponent,
     CustomerGroupDetailComponent,
     UploadProductImageComponent,
+    BannerInfoComponent,
+    BannerDetailComponent,
+    NewBannerComponent,
+    SubscriptionInfoComponent,
   ],
   imports: [
     CommonModule,
@@ -134,6 +143,7 @@ const AdminManagementRoutes: Routes = [
     MatIconModule,
     MatSliderModule,
     MatSlideToggleModule,
+    ImageCropperModule,
     RouterModule.forChild(AdminManagementRoutes),
   ],
   exports: [RouterModule]

@@ -4,7 +4,6 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-
 import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
@@ -13,7 +12,6 @@ import { ProfileComponent } from './profile/profile.component';
 import { BoardAdminComponent } from './board-admin/board-admin.component';
 import { BoardModeratorComponent } from './board-moderator/board-moderator.component';
 import { BoardUserComponent } from './board-user/board-user.component';
-
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
@@ -51,6 +49,7 @@ import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout/admin-
 import { NavbarComponent } from './navbar/navbar.component';
 import { DragDropFileUploadDirective } from './directives/drag-drop-file-upload.directive';
 import { ClientLayoutComponent } from './layouts/client-layout/client-layout.component';
+import { SignupComponent } from './signup/signup.component';
 
 
 @NgModule({
@@ -106,6 +105,7 @@ import { ClientLayoutComponent } from './layouts/client-layout/client-layout.com
     NavbarComponent,
     DragDropFileUploadDirective,
     ClientLayoutComponent,
+    SignupComponent,
   ],
   providers: [authInterceptorProviders, NotifierService, MatSnackBarModule],
   bootstrap: [AppComponent]

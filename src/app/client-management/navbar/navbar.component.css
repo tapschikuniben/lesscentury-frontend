@@ -1,3 +1,9 @@
+section {
+	height: 100%;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	-webkit-font-smoothing: antialiased;
+}
+
 .my-toolbar {
   background-color: #fefefe;
   height: 140px;
@@ -28,7 +34,7 @@
 
 .search_box button {
   padding: 6px 10px;
-  background: #ddd;
+  background: #EAECEE;
   font-size: 17px;
   border: solid 2px #d87093;
   border-left: none;
@@ -48,7 +54,6 @@
 .my-nav-links {
   float: right;
   font-size: 15px;
-  font-family: Helvetica;
   color: #000000;
 }
 
@@ -76,12 +81,10 @@
 
 .nav-item a{
     font-size: 14px;
-     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .top_nav-item  a{
  font-size: 14px;
- font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .sign_up_button {
@@ -90,9 +93,9 @@
   cursor: pointer;
   border: none;
   border-radius: 0;
-  margin: 0 0 0 3px;
   height: 40px;
   width: 130px;
+  padding: 0;
 }
 
 .nav{

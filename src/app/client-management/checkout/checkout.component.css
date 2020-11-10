@@ -72,6 +72,10 @@ ol {
 	margin: 0;
 }
 
+.container {
+	max-width: 80%;
+}
+
 /*---------------------
   Helper CSS
 -----------------------*/
@@ -95,8 +99,8 @@ ol {
 }
 
 .spad {
-	padding-top: 105px;
-	padding-bottom: 105px;
+	padding-top: 50px;
+	padding-bottom: 50px;
 }
 
 .text-white h1,
@@ -161,13 +165,26 @@ ol {
 	box-shadow: inset 0 0 0 1px #111111;
 }
 
-
-
-
-
 /* ----------------
   Checkout Page
 ---------------------*/
+
+.billing_address_button {
+	width: 50%;
+}
+
+.billing_address_title {
+	width: 50%;
+}
+
+.billing_address_button button {
+	border: none;
+	color: #fefefe;
+	background-color: #d87093;
+	font-weight: 500;
+	padding: 6px;
+	margin-left: 10px;
+}
 
 .checkout-form .cf-title {
 	font-size: 16px;
@@ -176,8 +193,28 @@ ol {
 	line-height: 1;
 	border-radius: 0;
 	background: #3b3b3b;
-	padding: 21px 29px 20px;
-	margin-bottom: 66px;
+	padding: 10px 18px 10px 18px;
+	margin-bottom: 20px;
+}
+
+.adrress-table .address-header {
+	width: 60%;
+}
+
+.adrress-table .address-country {
+    width: 20%;
+}
+
+.adrress-table .address-contact {
+    width: 20%;
+}
+
+.adrress-table th {
+	font-weight: 400;
+}
+
+.radio-button {
+	text-align: center;
 }
 
 .checkout-form p {
@@ -199,10 +236,6 @@ ol {
 	border-radius: 0;
 	margin-bottom: 20px;
 	font-size: 14px;
-}
-
-.checkout-form .address-inputs {
-	margin-bottom: 54px;
 }
 
 .address-rb {
@@ -264,7 +297,8 @@ ol {
 }
 
 .shipping-btns {
-	margin-bottom: 50px;
+	margin-bottom: 20px;
+	padding-left: 18px;
 }
 
 .shipping-btns .cf-radio-btns label {
@@ -297,12 +331,13 @@ ol {
 
 .checkout-cart {
 	background: #f0f0f0;
-	padding: 40px 24px 30px;
+	padding: 20px 24px 30px;
 	border-radius: 0px;
 }
 
 .checkout-cart h3 {
 	margin-bottom: 30px;
+	font-size: 18px;
 }
 
 .checkout-cart .product-list {
@@ -363,3 +398,36 @@ ol {
 	font-weight: 700;
 }
 
+.delivery_instructions {
+	width: 100%;
+}
+
+.cash_payment_method {
+	border: solid #f0f0f0 1px ;
+	border-left: none;
+	border-right: none;
+	width: 100%;
+}
+
+.cash_payment_method .cash_payment_method_choice {
+	display: flex;
+	justify-content: space-between;
+	padding: 10px 18px 10px 18px;
+	border: solid #f0f0f0 1px ;
+	border-top: none;
+}
+
+.cash_payment_method .cash_payment_method_choice .method_heading {
+	font-size: 18px;
+	font-weight: 700;
+}
+
+.total_amount {
+	text-align: right;
+	padding-right: 35px;
+}
+
+.total_amount_select {
+	text-align: right;
+	padding-right: 35px;
+}

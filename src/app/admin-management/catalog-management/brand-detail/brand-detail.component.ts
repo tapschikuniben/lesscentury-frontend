@@ -102,7 +102,7 @@ export class BrandDetailComponent implements OnInit {
     console.log('brand', brand)
   }
 
-  onCloseClick(): void {
+  close() {
     this.dialogRef.close();
   }
 

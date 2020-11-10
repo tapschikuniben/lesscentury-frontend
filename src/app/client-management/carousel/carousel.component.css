@@ -1,8 +1,56 @@
-.container {
-    padding: 100px;
-    margin: 0 auto;
-    width: 700px;
+section {
+	height: 100%;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	-webkit-font-smoothing: antialiased;
 }
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	font-weight: 600;
+}
+
+h1 {
+	font-size: 70px;
+}
+
+h2 {
+	font-size: 36px;
+}
+
+h3 {
+	font-size: 30px;
+}
+
+h4 {
+	font-size: 24px;
+}
+
+h5 {
+	font-size: 18px;
+}
+
+h6 {
+	font-size: 16px;
+}
+
+.text-white h1,
+.text-white h2,
+.text-white h3,
+.text-white h4,
+.text-white h5,
+.text-white h6,
+.text-white p,
+.text-white span,
+.text-white li,
+.text-white a {
+	color: #fff;
+}
+
 
 .row {
 	margin-bottom: 40px;
@@ -42,79 +90,98 @@
   padding-left: 0;
 }
 
-.carousel-caption h3 {
-  font-size: 25px;
-  font-weight: bold;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: #ffffff;
-  text-shadow: 1px 1px #000000;
-}
-
-.carousel-caption h2 {
-  font-size: 65px;
-  font-weight: bold;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: #ffffff;
-  text-shadow: 1px 1px #000000;
-}
-
-.carousel-caption p {
-  text-shadow: 1px 1px #000000;
-}
-
-.price_card_in{
-  font-family: cursive;
-}
-
 .discover_button {
   background:  #d87093;
-  font-size: 15px;
+  font-size: 14px;
+  font-weight: 500;
   cursor: pointer;
   border: none;
   border-radius: 0;
   margin: 0 0 0 3px;
   height: 50px;
-  width: 200px;
+  width: 170px;
 }
 
 .add_to_button {
   background:  #d87093;
-  font-size: 17px;
+  font-size: 14px;
+  font-weight: 500;
   cursor: pointer;
   border: none;
   border-radius: 0;
   margin: 0 0 0 3px;
   height: 50px;
-  width: 200px;
+  width: 170px;
 }
 
 .carousel-row {
   margin-top: 6%;
 }
 
-.price_tag {
-  display: flex;
-  justify-content: flex-end;
+.carousel-row span {
+  font-size: 18px;
+	text-transform: uppercase;
+	font-weight: 600;
+	letter-spacing: 3px;
+	display: block;
 }
 
-.price_card {
-  background-color:  #d87093;
-  height: 200px;
-  width: 200px;
-  border-radius: 100%;
-  margin-top: 50px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  /*box-shadow: 2px 2px #888888;*/
+.carousel-row h2 {
+  font-size: 60px;
+	text-transform: uppercase;
+	font-weight: 700;
+	margin-bottom: 10px;
+	position: relative;
 }
 
-.price_card_in {
-  border: solid 2px #fefefe ;
-  border-radius: 100%;
-  text-align: center;
-  padding: 35px;
-  top: 0;
-  height: 190px;
-  width: 190px;
+.carousel-row p {
+  font-size: 15px;
+	font-weight: 250;
+	margin-bottom: 35px;
+	position: relative;
 }
+
+.price_tag .offer-card {
+	position: absolute;
+	right: 0;
+	top: 50px;
+	width: 162px;
+	height: 162px;
+	border-radius: 50%;
+	background: #d87093;
+	text-align: center;
+	padding-top: 20px;
+	-webkit-transform: rotate(45deg);
+	-ms-transform: rotate(45deg);
+	transform: rotate(0deg);
+}
+
+.price_tag .offer-card:after {
+	position: absolute;
+	content: "";
+	width: calc(100% - 10px);
+	height: calc(100% - 10px);
+	border: 1px solid #f96790;
+	left: 5px;
+	top: 5px;
+	border-radius: 50%;
+}
+
+.price_tag .offer-card span {
+	font-size: 18px;
+	text-transform: lowercase;
+  position: relative;
+}
+
+.price_tag .offer-card h2 {
+	font-size: 72px;
+	font-weight: 400;
+  line-height: 1;
+}
+
+.price_tag .offer-card p {
+	text-transform: uppercase;
+	line-height: 1;
+  font-size: 14px;
+}
+

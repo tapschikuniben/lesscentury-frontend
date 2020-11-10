@@ -13,8 +13,8 @@ const httpOptions = {
 })
 export class ProductService {
 
-    //private baseurl = 'http://localhost:3000/';
-    private baseurl = 'https://lesscentury.herokuapp.com/'
+    private baseurl = 'http://localhost:3000/';
+    //private baseurl = 'https://lesscentury.herokuapp.com/'
 
     constructor(private http: HttpClient) { }
 

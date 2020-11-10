@@ -1,0 +1,75 @@
+<div class="card card-plain">
+    <div class="card-header card-header-success">
+        <h4 class="card-title">Banner</h4>
+    </div><br />
+
+    <form [formGroup]="form" (ngSubmit)="submitForm()">
+        <!-- Image Preview -->
+        <div class="form-group">
+            <div class="preview" *ngIf="preview && preview !== null">
+                <img [src]="preview" [alt]="form.value.name" class="uploadFile">
+            </div>
+        </div>
+
+        <!-- File Input -->
+        <div class="row bg-light">
+            <div class="col-md-12">
+                <span class="btn btn-default btn-file">
+                    Choose File <input type="file" (change)="uploadFile($event)">
+                </span>
+            </div>
+        </div>
+
+        <div class="row bg-light">
+            <div class="col-md-6">
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Banner Name" formControlName="banner_name" name="banner_name">
+                </mat-form-field>
+            </div>
+
+            <div class="col-md-6">
+                <mat-form-field class="example-full-width">
+                    <mat-select matInput placeholder="Select Status" formControlName="status" name="status">
+                        <mat-option value="">Select Status</mat-option>
+                        <mat-option value="active">Active</mat-option>
+                        <mat-option value="false">In Active</mat-option>
+                    </mat-select>
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row bg-light">
+            <div class="col-md-4">
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Banner Title" formControlName="title" name="title">
+                </mat-form-field>
+            </div>
+            <div class="col-md-4">
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Product Name" formControlName="product_name" name="product_name">
+                </mat-form-field>
+            </div>
+            <div class="col-md-4">
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Product Amount From" formControlName="product_amount_from"
+                        name="product_amount_from">
+                </mat-form-field>
+            </div>
+        </div>
+
+        <div class="row bg-light">
+            <div class="col-md-12">
+                <mat-form-field class="example-full-width">
+                    <input matInput placeholder="Product Description" formControlName="product_description"
+                        name="product_description">
+                </mat-form-field>
+            </div>
+        </div>
+
+        <button mat-raised-button type="submit" class="btn btn-success btn-round pull-right">Update
+        </button>
+        <button mat-raised-button (click)="close()" class="btn btn-round pull-right">Close
+        </button>
+
+    </form>
+</div>

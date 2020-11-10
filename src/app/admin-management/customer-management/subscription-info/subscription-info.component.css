@@ -1,0 +1,31 @@
+.subscriptions_table {
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+.subscriptions_table  th, td {
+        width: 50%
+}
+
+.delete_icon ,.view_icon{
+  cursor: pointer; 
+}
+
+.filter{
+  width: 100%;
+}
+
+.example-h2 {
+  margin: 10px;
+}
+
+.example-section {
+  display: flex;
+  align-content: center;
+  align-items: center;
+  height: 60px;
+}
+
+.example-margin {
+  margin: 10px;
+}

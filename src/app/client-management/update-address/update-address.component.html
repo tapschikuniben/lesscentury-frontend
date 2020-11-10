@@ -1,0 +1,22 @@
+<form class="checkout-form">
+    <div class="row address-inputs">
+        <div class="col-md-12">
+            <input type="text" placeholder="Address" name="physical_address_line_one"
+                [(ngModel)]="delivery_address.billing_address.physical_address_line_one">
+            <input type="text" placeholder="Address line 2" name="physical_address_line_two"
+                [(ngModel)]="delivery_address.billing_address.physical_address_line_two">
+            <input type="text" placeholder="Country" name="country"
+                [(ngModel)]="delivery_address.billing_address.country">
+        </div>
+        <div class="col-md-6">
+            <input type="text" placeholder="Zip code" name="zip_code"
+                [(ngModel)]="delivery_address.billing_address.zip_code">
+        </div>
+        <div class="col-md-6">
+            <input type="text" placeholder="Phone no." name="contact"
+                [(ngModel)]="delivery_address.billing_address.contact">
+        </div>
+    </div>
+    <button type="button" class="save_address_btn" (click)="updateAddress(delivery_address)">Edit</button>
+    <button type="button" class="close_btn" (click)="close()">Close</button>
+</form>

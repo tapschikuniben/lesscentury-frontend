@@ -30,7 +30,7 @@ export class ProductInfoComponent implements OnInit {
   public color: ThemePalette = 'accent';
   public checked = false;
   public disabled = false;
-  public displayedColumns: string[] = ['product_name', 'sku', 'price', 'delivery_mode', 'quantity', 'status', 'is_feature', 'todays_deals', 'upload', 'view', 'action'];
+  public displayedColumns: string[] = ['product_name', 'category', 'price', 'delivery_mode', 'quantity', 'status', 'is_feature', 'todays_deals', 'upload', 'view', 'action'];
 
 
   constructor(

@@ -21,6 +21,13 @@ import { ProductInfoComponent } from './product-info/product-info.component';
 import { CartComponent } from './cart/cart.component';
 import { CheckoutComponent } from './checkout/checkout.component';
 import { CategoryComponent } from './category/category.component';
+import { WomenComponent } from './women/women.component';
+import { MenComponent } from './men/men.component';
+import { MatRadioModule } from '@angular/material/radio';
+import { NewDeliveryAddressComponent } from './new-delivery-address/new-delivery-address.component';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatBadgeModule } from '@angular/material/badge';
+import { UpdateAddressComponent } from './update-address/update-address.component';
 
 const ClientManagementRoutes: Routes = [
   {
@@ -31,7 +38,9 @@ const ClientManagementRoutes: Routes = [
       { path: 'product/:id', component: ProductInfoComponent },
       { path: 'cart', component: CartComponent },
       { path: 'checkout', component: CheckoutComponent },
-
+      { path: 'category', component: CategoryComponent },
+      { path: 'women', component: WomenComponent },
+      { path: 'men', component: MenComponent },
     ]
   },
 ];
@@ -47,7 +56,11 @@ const ClientManagementRoutes: Routes = [
     ProductInfoComponent,
     CartComponent,
     CheckoutComponent,
-    CategoryComponent],
+    CategoryComponent,
+    WomenComponent,
+    MenComponent,
+    NewDeliveryAddressComponent,
+    UpdateAddressComponent],
   imports: [
     CommonModule,
     BrowserModule,
@@ -63,6 +76,13 @@ const ClientManagementRoutes: Routes = [
     MatToolbarModule,
     MatCardModule,
     MatButtonModule,
+    MatRadioModule,
+    MatCheckboxModule,
+    MatIconModule,
+    MatBadgeModule,
   ],
+  entryComponents: [
+    NewDeliveryAddressComponent
+  ]
 })
 export class ClientManagementModule { }

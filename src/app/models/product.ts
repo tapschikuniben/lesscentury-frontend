@@ -15,6 +15,7 @@ export class Product {
     date_available: Date;
     sort_index: number;
     product_name: string;
+    category: string;
     description: string;
     amount: number;
     meta_tag_title: string;

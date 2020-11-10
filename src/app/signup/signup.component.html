@@ -1,0 +1,83 @@
+<div class="login-container">
+  <div *ngIf="!isSuccessful" class="col-md-12 d-flex justify-content-center">
+    <mat-card class="login-card">
+      <div class="image-container">
+        <img id="profile-img" src="../../assets/imgs/lesscentury.jpeg" class="profile-img-card" />
+      </div>
+
+      <mat-card-content>
+        <form class="example-form" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+          <mat-form-field class="example-full-width">
+            <mat-label>First Name</mat-label>
+            <input matInput placeholder="First Name" name="first_name" [(ngModel)]="form.first_name" required
+              #first_name="ngModel">
+            <mat-error *ngIf="first_name.errors?.required && first_name.touched">
+              First Name is required!
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Last Name</mat-label>
+            <input matInput placeholder="Last Name" name="last_name" [(ngModel)]="form.last_name" required
+              #last_name="ngModel">
+            <mat-error *ngIf="last_name.errors?.required && last_name.touched">
+              Last Name is required!
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Username</mat-label>
+            <input matInput placeholder="Username" name="username" [(ngModel)]="form.username" minlength="3"
+              maxlength="20" required #username="ngModel">
+            <mat-error *ngIf="username.errors?.required && username.touched">
+              Username is required!
+            </mat-error>
+            <mat-error *ngIf="username.errors?.minlength">
+              Username must be at least 3 characters
+            </mat-error>
+            <mat-error *ngIf="username.errors?.maxlength">
+              Username must be at most 20 characters
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Email" name="email" [(ngModel)]="form.email" required #email="ngModel">
+            <mat-error *ngIf="email.errors?.required && email.touched">
+              Email is required!
+            </mat-error>
+            <mat-error *ngIf="email.errors?.email">
+              Email must be a valid email address
+            </mat-error>
+          </mat-form-field>
+
+          <mat-form-field class="example-full-width">
+            <mat-label>Password</mat-label>
+            <input matInput [type]="hide ? 'password' : 'text'" name="password" [(ngModel)]="form.password" required
+              minlength="6" #password="ngModel">
+            <mat-error *ngIf="password.errors?.required && password.touched">
+              password is required!
+            </mat-error>
+            <mat-error *ngIf="password.errors?.minlength && password.touched">
+              Password must be at least 6 characters
+            </mat-error>
+          </mat-form-field>
+
+          <button class="example-full-width login-button" type="submit" color="primary" [disabled]="loading">
+            <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+            Sign Up
+          </button>
+        </form>
+      </mat-card-content>
+      <div class="sign_in_sign_up d-flex">
+        <div class="sign_in_sign_up_btn-left d-flex">
+          <button mat-button [routerLink]="['/home']">Website</button>
+        </div>
+        <div class="sign_in_sign_up_btn-right d-flex">
+          <button mat-button [routerLink]="['/login']">Sign In</button>
+          <button mat-button>Forgot Password</button>
+        </div>
+      </div>
+    </mat-card>
+  </div>
+</div>

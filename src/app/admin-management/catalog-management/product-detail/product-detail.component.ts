@@ -1,6 +1,7 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Product } from 'src/app/models/product';
+import { CategoryService } from 'src/app/services/category.service';
 import { NotifierService } from 'src/app/services/notifier.service';
 import { ProductService } from 'src/app/services/product.service';
 import { UploadFilesService } from 'src/app/services/upload-product-files.service';
@@ -15,6 +16,7 @@ export class ProductDetailComponent implements OnInit {
   public product: Product;
   public ProductData: [] = [];
   public productfiles = [];
+  public categories = [];
 
   constructor(
     @Inject(MAT_DIALOG_DATA) public productdatainfo: any,
@@ -22,12 +24,22 @@ export class ProductDetailComponent implements OnInit {
     private notifier: NotifierService,
     public dialogRef: MatDialogRef<ProductDetailComponent>,
     private uploadProductFilesService: UploadFilesService,
+    private categoryService: CategoryService,
   ) { }
 
   ngOnInit(): void {
     this.initializeProduct();
     this.getProduct();
     this.getProductImages();
+    this.getCategories();
+  }
+
+
+  getCategories() {
+    this.categoryService.getAllCategorys().subscribe(returned_categories => {
+      this.categories = returned_categories
+      console.log('categories', this.categories)
+    })
   }
 
   initializeProduct(): void {
@@ -48,6 +60,7 @@ export class ProductDetailComponent implements OnInit {
       date_available: new Date(Date.now()),
       sort_index: 0,
       product_name: '',
+      category: '',
       description: '',
       amount: 0,
       meta_tag_title: '',

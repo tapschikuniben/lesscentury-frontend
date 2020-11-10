@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { NgbCarouselConfig } from '@ng-bootstrap/ng-bootstrap';
+import { Component, EventEmitter, OnInit, Output, ɵConsole } from '@angular/core';
+import { NgbCarouselConfig, NgbSlideEvent } from '@ng-bootstrap/ng-bootstrap';
+import { config } from 'rxjs';
+import { FileUploadService } from 'src/app/services/file-upload.service';
 import { UploadFilesService } from 'src/app/services/upload-product-files.service';
 
 @Component({
@@ -11,42 +13,44 @@ import { UploadFilesService } from 'src/app/services/upload-product-files.servic
 export class CarouselComponent implements OnInit {
 
   public ProductData: [] = [];
+  public BannerData = [];
   public images = [];
 
-  public title = 'New Arrivals';
-  public product_name = 'DENIM JACKETS';
-  public product_description = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt utlabore et doloremagna aliqua. Quis ipsum sus-pendisse ultrices gravida. Risus commodo viverra maecenas accumsanlacus velfacilisis.';
+  public title = '';
+  public product_name = '';
+  public product_description = '';
+  public product_amount_from = 0;
 
   showNavigationArrows = false;
   showNavigationIndicators = false;
-
-  /*images = [1055, 194, 368].map((n) => `https://picsum.photos/id/${n}/900/500`);*/
-
-
-  //   =[
-  //   {img:'../../assets/img/banner4.png',heading1:'Promotion1',heading2:'event1',heading3:'brief info'},
-  //   {img:'../../assets/img/banner6.jpg',heading1:'Promotion2',heading2:'event2',heading3:'brief info2'},
-  // ]
-
   constructor(
     config: NgbCarouselConfig,
-    private uploadProductFilesService: UploadFilesService) {
-    // customize default values of carousels used by this component tree
+    private uploadFile: FileUploadService
+  ) {
     config.showNavigationArrows = true;
     config.showNavigationIndicators = true;
+    config.interval = 5000;
   }
 
   ngOnInit(): void {
-    this.getProductImages();
+    this.getBanners();
   }
 
-  // get product images
-  getProductImages(): void {
-    this.uploadProductFilesService.getFiles().subscribe(data => {
-      this.ProductData = data;
-      this.ProductData['productFiles'].map(element => {
-        this.images.push(...element.avatar);
-      });
+  //get banners
+  getBanners(): void {
+    this.uploadFile.getBanners().subscribe(data => {
+      this.BannerData = data;
+      this.BannerData['banners'].map(element => {
+        this.images.push(element.avatar);
+      })
     })
+  }
+
+  onSlide(slideEvent: NgbSlideEvent) {
+    const imageIndex = parseInt(slideEvent.current.replace("slideId_", ""), 10);
+    this.title = this.BannerData['banners'][imageIndex]['title'];
+    this.product_name = this.BannerData['banners'][imageIndex]['product_name'].toUpperCase();
+    this.product_description = this.BannerData['banners'][imageIndex]['product_description'];
+    this.product_amount_from = this.BannerData['banners'][imageIndex]['product_amount_from'];
   }
 }

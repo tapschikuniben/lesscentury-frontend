@@ -1,6 +1,7 @@
 import { Component, EventEmitter, OnInit } from '@angular/core';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Product } from 'src/app/models/product';
+import { CategoryService } from 'src/app/services/category.service';
 import { NotifierService } from 'src/app/services/notifier.service';
 import { ProductService } from 'src/app/services/product.service';
 
@@ -13,16 +14,26 @@ export class NewProductComponent implements OnInit {
 
   public product: Product;
   public onProductCreation = new EventEmitter();
+  public categories = [];
 
   constructor(
     private productService: ProductService,
     private notifier: NotifierService,
     public dialogRef: MatDialogRef<NewProductComponent>,
+    private categoryService: CategoryService
   ) { }
 
   ngOnInit(): void {
     // initialising products
     this.initializeProduct();
+    this.getCategories();
+  }
+
+  getCategories() {
+    this.categoryService.getAllCategorys().subscribe(returned_categories => {
+      this.categories = returned_categories
+      console.log('categories', this.categories)
+    })
   }
 
   initializeProduct(): void {
@@ -43,6 +54,7 @@ export class NewProductComponent implements OnInit {
       date_available: new Date(Date.now()),
       sort_index: 0,
       product_name: '',
+      category: '',
       description: '',
       amount: 0,
       meta_tag_title: '',

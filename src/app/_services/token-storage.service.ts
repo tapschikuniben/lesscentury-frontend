@@ -13,7 +13,7 @@ export class TokenStorageService {
 
   signOut(): void {
     window.sessionStorage.clear();
-    const url = `/login`;
+    const url = `/home`;
     this.router.navigate([url]);
   }
 

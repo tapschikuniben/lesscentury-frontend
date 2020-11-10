@@ -10,16 +10,21 @@ import { BoardModeratorComponent } from './board-moderator/board-moderator.compo
 import { BoardAdminComponent } from './board-admin/board-admin.component';
 import { AdminLayoutComponent } from './layouts/admin-layout/admin-layout/admin-layout.component';
 import { ClientLayoutComponent } from './layouts/client-layout/client-layout.component';
+import { SignupComponent } from './signup/signup.component';
 
 const routes: Routes = [
   // { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
-  // { path: 'register', component: RegisterComponent },
-  // { path: 'profile', component: ProfileComponent },
-  // { path: 'user', component: BoardUserComponent },
-  // { path: 'mod', component: BoardModeratorComponent },
-  //{ path: 'admin', component: BoardAdminComponent },
-  //{ path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: 'signup', component: SignupComponent },
+  { path: 'register', component: RegisterComponent },
+
+
+  { path: 'profile', component: ProfileComponent },
+  { path: 'user', component: BoardUserComponent },
+  { path: 'mod', component: BoardModeratorComponent },
+  { path: 'admin', component: BoardAdminComponent },
+
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
 
   // {
   //   path: '',

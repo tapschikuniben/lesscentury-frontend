@@ -1,3 +1,56 @@
+section {
+	height: 100%;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+	font-weight: 600;
+}
+
+h1 {
+	font-size: 70px;
+}
+
+h2 {
+	font-size: 36px;
+}
+
+h3 {
+	font-size: 30px;
+}
+
+h4 {
+	font-size: 24px;
+}
+
+h5 {
+	font-size: 18px;
+}
+
+h6 {
+	font-size: 16px;
+}
+
+.text-white h1,
+.text-white h2,
+.text-white h3,
+.text-white h4,
+.text-white h5,
+.text-white h6,
+.text-white p,
+.text-white span,
+.text-white li,
+.text-white a {
+	color: #fff;
+}
+
 .footer-section-top{
   display: flex;
   justify-content: center;
@@ -5,16 +58,25 @@
   padding: 20px 0 20px 0;
 }
 
+.footer-section-top p {
+    color:#9f9fa0;
+    text-align: justify;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+
 .subscribe{
   display: flex;
 }
 
 .subscribe input[type=text] {
-  font-size: 17px;
+  font-size: 15px;
   width: 80%;
   background-color: #EAECEE;
   border: none;
   height: 40px;
+  padding-left: 10px;
 }
 
 .message {
@@ -25,7 +87,9 @@
 
 .subscribe_button {
   background: #d87093;
-  font-size: 15px;
+  color: #d7d7d7;
+  font-size: 14px;
+  padding: 0 15px 0 15px;
   cursor: pointer;
   border: none;
   margin: 0 0 0 3px;
@@ -35,7 +99,7 @@
 
 .footer-section {
     background-color: #1C2833;
-    color: whitesmoke;
+    color: #ABB2B9;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -43,7 +107,7 @@
 
 .footer-section-bootom {
     background-color: #1C2833;
-    color: whitesmoke;
+    color: #ABB2B9;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -65,40 +129,28 @@
     width: 80%;
 }
 
-h2 {
-  font-size: 20px;
-  font-weight: 20px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
-p {
-    color:#D5D8DC;
-    text-align: justify;
-    font-size: 14px;
-    font-weight: 500;
-}
-
 .footer-widget ul {
 padding-left: 15px;
 text-decoration: none;
 color: #1C2833;
 font-size: 14px;
-font-weight: 500;
 }
 
-.footer-widget h2 {
-    font-size: 14px;
-    font-weight: 500;
-}
-
-.about-widget h2{
+.about-widget h6 {
   padding-left: 15px;
 }
 
-.about-widget a{
+.about-widget a {
 color: #d87093;
 }
 
+.contact-widget {
+  font-size: 14px;
+}
+
+.footer-widget h6 {
+   margin-bottom: 10px;
+}
 
 /*Social Media Section*/
 
@@ -168,6 +220,11 @@ color: #d87093;
 
 .social-links a:hover span {
 	color: #fff;
+}
+
+.copyright {
+ color: #d7d7d7;
+ font-size: 14px;
 }
 
 

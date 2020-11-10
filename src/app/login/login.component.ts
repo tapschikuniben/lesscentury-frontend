@@ -11,12 +11,12 @@ import { TokenStorageService } from '../_services/token-storage.service';
 })
 export class LoginComponent implements OnInit {
 
-  form: any = {};
-  isLoggedIn = false;
-  isLoginFailed = false;
-  errorMessage = '';
-  roles: string[] = [];
-  loading = false;
+  public form: any = {};
+  public isLoggedIn = false;
+  public isLoginFailed = false;
+  public errorMessage = '';
+  public roles: string[] = [];
+  public loading = false;
 
   constructor(
     private authService: AuthService,
@@ -43,7 +43,6 @@ export class LoginComponent implements OnInit {
         this.isLoginFailed = false;
         this.isLoggedIn = true;
         this.roles = this.tokenStorage.getUser().roles;
-        console.log('user data', data)
         console.log('user data', this.roles)
         //this.reloadPage();
         let i = 0;
@@ -54,14 +53,14 @@ export class LoginComponent implements OnInit {
             this.router.navigate([url]);
             this.notifier.Notification("success", "successfully logged as Admin");
           } else if (this.roles[i] === 'ROLE_USER') {
-            console.log('This is User')
+            const url = `/home`;
+            this.router.navigate([url]);
+            this.notifier.Notification("success", "successfully logged in")
           } else if (this.roles[i] === 'ROLE_MODERATOR') {
-            console.log('This is Moderator')
           }
         }
 
         if (this.roles.includes('ROLE_MODERATOR')) {
-          console.log('Moderator Big Time')
         }
 
       },

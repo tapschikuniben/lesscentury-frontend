@@ -1,69 +1,82 @@
-<mat-toolbar class="my-toolbar">
-    <div class="toolbar-content">
-        <img class="logo" src="../../../assets/imgs/lesscentury.jpeg" alt="lesscentury">
-    </div>
-    <!-- <div class="search">
-        <input type="text" placeholder="Search.." name="search">
-        <button class="search_button" type="submit"><i class="fa fa-search"></i></button>
-    </div> -->
-    <div class="search_box">
-        <input type="text" placeholder="Search.." name="search">
-        <button type="submit"><i class="fa fa-search"></i></button>
-    </div>
- 
+<section>
+    <mat-toolbar class="my-toolbar">
+        <div class="toolbar-content">
+            <img class="logo" src="../../../assets/imgs/lesscentury.jpeg" alt="lesscentury">
+        </div>
+        <div class="search_box">
+            <input type="text" placeholder="Search.." name="search">
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </div>
 
-    <span class="example-spacer"></span>
-    <div class="my-nav-links">
-        <ul class="nav">
-            <li class="top_nav-item">
-                <a mat-button class="top_nav-link" [routerLinkActive]="['active']" data-toggle="tab"
-                    [routerLink]="['/signin']">
-                    <i class="material-icons">perm_identity</i> Sign In
-                </a>
-            </li>
-            <button type="button" class="btn sign_up_button">Sign Up</button>
-            <li class="top_nav-item">
-                <a mat-button class="top_nav-link" [routerLinkActive]="['active']" data-toggle="tab"
-                    [routerLink]="['/cart']">
-                    <i class="material-icons">local_mall</i> Cart
-                </a>
-            </li>
-        </ul>
-    </div>
-</mat-toolbar>
+        <span class="example-spacer"></span>
+        <div class="my-nav-links" [hidden]="isLoggedIn">
+            <ul class="nav">
+                <li class="top_nav-item">
+                    <a mat-button class="top_nav-link" [routerLinkActive]="['active']" data-toggle="tab"
+                        [routerLink]="['/login']">
+                        <i class="material-icons">perm_identity</i> Sign In
+                    </a>
+                </li>
+                <button type="button" class="btn sign_up_button" [routerLink]="['/signup']">Sign Up</button>
+                <li class="top_nav-item">
+                    <a mat-button class="top_nav-link" [routerLinkActive]="['active']" data-toggle="tab"
+                        [routerLink]="['/cart']">
+                        <!-- <i class="material-icons">add_shopping_cart</i> Cart -->
+                        <mat-icon matBadge="{{cart_items}}" matBadgeColor="accent">add_shopping_cart</mat-icon> Cart
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="my-nav-links" [hidden]="!isLoggedIn">
+            <ul class="nav">
+                <li class="top_nav-item">
+                    <a mat-button class="top_nav-link" [routerLinkActive]="['active']" data-toggle="tab"> {{user}}
+                    </a>
+                </li>
+                <button type="button" class="btn sign_up_button" (click)="logout()">Logout</button>
+                <li class="top_nav-item">
+                    <a mat-button class="top_nav-link" [routerLinkActive]="['active']" data-toggle="tab"
+                        [routerLink]="['/cart']">
+                        <!-- <i class="material-icons">add_shopping_cart</i> Cart -->
+                        <mat-icon matBadge="{{cart_items}}" matBadgeColor="accent">add_shopping_cart</mat-icon> Cart
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </mat-toolbar>
 
-<mat-toolbar class="my-toolbar-secondary nav-bg">
-    <div class="my-nav-links-secondary">
-        <ul class="nav">
-            <li class="nav-item">
-                <a mat-button class="nav-link" [routerLinkActive]="['active']" data-toggle="tab"
-                    [routerLink]="['/home']">Home
-                </a>
-            </li>
-            <li class="nav-item">
-                <a mat-button class="nav-link" [routerLinkActive]="['active']" data-toggle="tab"
-                    [routerLink]="['/men']">
-                    Men
-                </a>
-            </li>
-            <li class="nav-item">
-                <a mat-button class="nav-link" [routerLinkActive]="['active']" data-toggle="tab"
-                    [routerLink]="['/women']">
-                    Women
-                </a>
-            </li>
-            <li class="nav-item">
-                <a mat-button class="nav-link" [routerLinkActive]="['active']" data-toggle="tab"
-                    [routerLink]="['/blog']">
-                    Blog
-                </a>
-            </li>
-            <li class="nav-item">
-                <a mat-button class="nav-link" [routerLinkActive]="['active']" data-toggle="tab"
-                    [routerLink]="['/blog']">
-                    About Us
-                </a>
-            </li>
-        </ul>
-    </div>
-</mat-toolbar>
+    <mat-toolbar class="my-toolbar-secondary nav-bg">
+        <div class="my-nav-links-secondary">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a mat-button class="nav-link" [routerLinkActive]="['active']" data-toggle="tab"
+                        [routerLink]="['/home']">Home
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a mat-button class="nav-link" [routerLinkActive]="['active']" data-toggle="tab"
+                        [routerLink]="['/men']">
+                        Men
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a mat-button class="nav-link" [routerLinkActive]="['active']" data-toggle="tab"
+                        [routerLink]="['/women']">
+                        Women
+                    </a>
+                </li>
+                <!-- <li class="nav-item">
+                    <a mat-button class="nav-link" [routerLinkActive]="['active']" data-toggle="tab"
+                        [routerLink]="['/blog']">
+                        Blog
+                    </a>
+                </li> -->
+                <!-- <li class="nav-item">
+                    <a mat-button class="nav-link" href="#contact-details" data-toggle="tab" [routerLink]="['/blog']">
+                        Contact
+                    </a>
+                </li> -->
+            </ul>
+        </div>
+    </mat-toolbar>
+</section>

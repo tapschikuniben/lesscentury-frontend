@@ -1,39 +1,65 @@
-<!-- <div class="announce">
-    <div class="payments">
-        <h2><b>FAST SECURE PAYMENTS</b></h2>
-    </div>
-    <div class="premium">
-        <h2><b>PREMIUM PRODUCTS</b></h2>
-    </div>
-    <div class="delivery">
-        <h2><b>FREE & FAST DELIVERY</b></h2>
-    </div>
-</div> -->
-
-<div class="card-body">
+<section>
     <div class="header">
-        <h3>TRENDING ITEMS</h3>
+        <h3>TRENDING PRODUCTS</h3>
     </div>
-    <div class="product-cards">
+</section>
+<div class="card-body">
+    <section>
+        <div class="product-cards content">
+            <div class="col-lg-12  order-1 order-lg-2 mb-5 mb-lg-0">
+                <div class="row">
+                    <div class="col-lg-3 col-sm-6" *ngFor="let product of products, index as i">
+                        <div class="product-item">
+                            <div class="pi-pic">
+                                <!-- <div class="tag-sale">ON SALE</div> -->
+                                <img [src]="my_images[i]" alt="">
+                                <div class="pi-links">
+                                    <a (click)="onSelectAddToCart(product.id)" class="add-card"><i>
+                                            <mat-icon>add_shopping_cart</mat-icon>
+                                        </i><span>ADD TO CART</span></a>
+                                    <a (click)="onSelectProduct(product.id)" class="add-card"><i>
+                                            <mat-icon>preview</mat-icon>
+                                        </i><span>VIEW ITEM</span></a>
+                                </div>
+                            </div>
+                            <div class="pi-text">
+                                <h6>{{product.price | currency}}</h6>
+                                <p>{{product.product_name}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center w-100 pt-3">
+                        <button class="site-btn sb-line sb-dark">LOAD MORE</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- <div class="product-cards">
         <div class="content" fxLayout="row wrap" fxLayoutGap="16px grid" *ngIf="productfiles">
             <div [fxFlex]="(100/gridColumns) + '%'" fxFlex.xs="100%" fxFlex.sm="33%"
-                *ngFor="let productfile of productfiles">
+                *ngFor="let productfiles of products, index as i">
                 <mat-card appMaterialElevation [defaultElevation]="defaultElevation" raisedElevation="16"
                     class="product_image">
-                    <img mat-card-image class="image" [src]="productfile.avatar[0]">
+                    <img mat-card-image class="image" [src]="my_images[i]">
                     <div>
-                        <p>{{productfile.product_name}}</p>
-                        <p><b>{{productfile.product_amount | currency}}</b></p>
+                        <p>{{productfiles.product_name}}</p>
+                        <p><b>{{productfiles.price | currency}} </b></p>
+
                     </div>
                     <div class="overlay">
                         <div class="row">
                             <button mat-icon-button class="card_button" color="accent"
                                 aria-label="Example icon button with a menu icon"
-                                (click)="onSelectProduct(productfile.product_id)">
+                                (click)="onSelectProduct(productfiles.id)">
                                 <mat-icon>visibility</mat-icon>
                             </button>
                             <button mat-icon-button class="card_button" color="accent"
-                                aria-label="Example icon button with a menu icon">
+                                aria-label="Example icon button with a menu icon"
+                                (click)="onSelectAddToCart(productfiles.id)">
                                 <mat-icon>local_mall</mat-icon>
                             </button>
                         </div>
@@ -41,5 +67,5 @@
                 </mat-card>
             </div>
         </div>
-    </div>
+    </div> -->
 </div>

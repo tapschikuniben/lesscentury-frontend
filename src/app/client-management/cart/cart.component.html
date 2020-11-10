@@ -1,96 +1,71 @@
-    <app-navbar></app-navbar>
-    <!-- cart section end -->
-    <div class="cart-info">
-        <section class="cart-section spad">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8">
-                        <div class="cart-table">
+<app-navbar></app-navbar>
+
+<div class="cart-info">
+    <section class="cart-section spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="cart-table">
+                        <div class="cart-table-warp">
                             <h3>Your Cart</h3>
-                            <div class="cart-table-warp">
-                                <table>
+                            <table>
                                 <thead>
                                     <tr>
                                         <th class="product-th">Product</th>
                                         <th class="quy-th">Quantity</th>
-                                        <th class="size-th">SizeSize</th>
                                         <th class="total-th">Price</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr>
+                                <tbody *ngFor="let product of products, index as i">
+                                    <tr class="cart-list" *ngIf="product.num !== 0">
                                         <td class="product-col">
-                                            <img src="../../../assets/img/cart/1.jpg" alt="">
+                                            <img [src]="my_images[i]">
                                             <div class="pc-title">
-                                                <h4>Animal Print Dress</h4>
-                                                <p>$45.90</p>
+                                                <h4>{{ product.product_name }}</h4>
+                                                <p>{{ product.price | currency }}</p>
                                             </div>
                                         </td>
                                         <td class="quy-col">
-                                            <div class="quantity">
-                                                <div class="pro-qty">
-                                                    <input type="text" value="1">
+                                            <div class="row center">
+                                                <div class="input-group">
+                                                    <button type="button" class="number-minus"
+                                                        (click)="removeCartItem(product)">-</button>
+                                                    <input type="number" [(ngModel)]="product.num" min="0"
+                                                        (ngModelChange)="modelChanged(product ,$event)">
+                                                    <button type="button" class="number-add"
+                                                        (click)="addCartItem(product.id)">+</button>
                                                 </div>
                                             </div>
                                         </td>
-                                        <td class="size-col"><h4>Size M</h4></td>
-                                        <td class="total-col"><h4>$45.90</h4></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="product-col">
-                                            <img src="../../../assets/img/cart/2.jpg" alt="">
-                                            <div class="pc-title">
-                                                <h4>Ruffle Pink Top</h4>
-                                                <p>$45.90</p>
-                                            </div>
+                                        <td class="total-col">
+                                            <h4>{{product.price * product.num | currency}}</h4>
                                         </td>
-                                        <td class="quy-col">
-                                            <div class="quantity">
-                                                <div class="pro-qty">
-                                                    <input type="text" value="1">
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="size-col"><h4>Size M</h4></td>
-                                        <td class="total-col"><h4>$45.90</h4></td>
-                                    </tr>
-                                    <tr>
-                                        <td class="product-col">
-                                            <img src="../../../assets/img/cart/3.jpg" alt="">
-                                            <div class="pc-title">
-                                                <h4>Skinny Jeans</h4>
-                                                <p>$45.90</p>
-                                            </div>
-                                        </td>
-                                        <td class="quy-col">
-                                            <div class="quantity">
-                                                <div class="pro-qty">
-                                                    <input type="text" value="1">
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td class="size-col"><h4>Size M</h4></td>
-                                        <td class="total-col"><h4>$45.90</h4></td>
                                     </tr>
                                 </tbody>
                             </table>
+                        </div>
+                        <div class="total-cost">
+                            <div class="clear-cart-btn">
+                                <button type="button" (click)="clearCart()">Clear Cart</button>
                             </div>
-                            <div class="total-cost">
-                                <h6>Total <span>$99.90</span></h6>
+                            <div class="subtotal">
+                                <h6>Sub Total <span>{{ total_amaount | currency }}</span></h6>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-4 card-right">
-                        <form class="promo-code-form">
-                            <input type="text" placeholder="Enter promo code">
-                            <button>Submit</button>
-                        </form>
-                        <a href="" class="site-btn">Proceed to checkout</a>
-                        <a href="" class="site-btn sb-dark">Continue shopping</a>
-                    </div>
+                </div>
+                <div class="col-lg-4 card-right">
+                    <form class="promo-code-form">
+                        <input type="text" placeholder="Enter promo code">
+                        <button>Submit</button>
+                    </form>
+                    <a class="site-btn" (click)="checkout()">Proceed to checkout</a>
+                    <a class="site-btn sb-dark" [routerLink]="['/category']">Continue shopping</a>
                 </div>
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
+</div>
 
-    <app-footer></app-footer>
+
+<app-footer></app-footer>

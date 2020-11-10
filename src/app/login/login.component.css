@@ -1,3 +1,13 @@
+.login-container {
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  background-color: #d87093;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+
 label {
   display: block;
   margin-top: 10px;
@@ -22,37 +32,38 @@ label {
 }
 
 .profile-img-card {
-  width: 96px;
-  height: 96px;
-  margin: 0 auto 10px;
+  width: 100px;
+  height: 100px;
+  margin: auto;
   display: block;
-  -moz-border-radius: 50%;
+  /* -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
-  border-radius: 50%;
+  border-radius: 50%; */
 }
 
-/*angular material card*/
-.example-card {
-  max-width: 400px;
-}
-
-.example-header-image {
-  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-  background-size: cover;
-}
-
-.example-form {
-  min-width: 150px;
-  max-width: 500px;
-  width: 100%;
+.login-card {
+  width: 400px;
+  border-radius: 0;
 }
 
 .example-full-width {
   width: 100%;
 }
 
-.login-inputs {
-  margin-top: 10%;
+.image-container {
+   border-bottom: solid 1px #D6DBDF;
+   padding: 0 0 20px 0;
+   margin-bottom: 20px;
+}
+
+.login-button {
+  border: none;
+  background-color: #d87093;
+  color: #fefefe;
+  height: 45px;
+  font-size: 16px;
+  font-weight: 400;
+  margin-top: 10px;
 }
 
 .sign_in_sign_up {
@@ -61,15 +72,26 @@ label {
   align-items: flex-end;
   padding-top: 8px;
   margin-bottom: 5px;
+  font-size: 16px;
+  font-weight: 400;
+  opacity: 0.7;
 }
 
-.sign_in_sign_up_header {
-   border-bottom: solid 1px #D6DBDF;
-   padding: 8px;
-   margin-bottom: 8px;
+.sign_in_sign_up_btn-left {
+  width: 50%;
 }
 
-.example-header-image {
-  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-  background-size: cover;
+.sign_in_sign_up_btn-left button {
+  padding-left: 0;
 }
+
+.sign_in_sign_up_btn-right {
+  width: 50%;
+}
+
+.sign_in_sign_up_btn-right button {
+  padding-right: 0;
+}
+
+
+

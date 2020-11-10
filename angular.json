@@ -27,7 +27,8 @@
               "src/styles.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/assets/scss/material-dashboard.scss",
-              "src/assets/css/demo.css"
+              "src/assets/css/demo.css",
+              "node_modules/animate.css/animate.min.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.js"
@@ -96,7 +97,8 @@
               "src/styles.css",
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/assets/scss/material-dashboard.scss",
-              "src/assets/css/demo.css"
+              "src/assets/css/demo.css",
+              "node_modules/animate.css/animate.min.css"
             ],
             "scripts": [
               "node_modules/jquery/dist/jquery.js"
